@@ -14,7 +14,8 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Aplica a todas las rutas
-                        .allowedOrigins("http://127.0.0.1:5500") // Permite el origen de Live Server
+                        .allowedOrigins("http://127.0.0.1:5500",
+                                "https://nivel-tinaco.onrender.com") // Permite el origen de Live Server
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*");
             }

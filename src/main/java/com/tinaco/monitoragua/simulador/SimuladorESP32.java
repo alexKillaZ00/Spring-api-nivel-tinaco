@@ -22,7 +22,8 @@ public class SimuladorESP32 {
             String json = String.format("{\"alturaAguaCm\": %.2f}", altura);
             System.out.println("Enviando: " + json);
 
-            URL url = new URL("http://localhost:8080/nivel");
+            //URL url = new URL("http://localhost:8080/nivel");
+            URL url = new URL("https://monitoragua.onrender.com/nivel");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
