@@ -4,6 +4,8 @@ import com.tinaco.monitoragua.dto.NivelDTO;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Service
@@ -77,7 +79,10 @@ public class NivelServiceImpl implements INivelService {
 
     private void iniciarLlenado() {
         llenadoEnCurso = true;
-        tiempoInicioLlenado = LocalDateTime.now().format(DateTimeFormatter.ofPattern(PATRON_FECHA));
+        //tiempoInicioLlenado = LocalDateTime.now().format(DateTimeFormatter.ofPattern(PATRON_FECHA));
+        tiempoInicioLlenado = ZonedDateTime.now(ZoneId.of("America/Mexico_City"))
+             .format(DateTimeFormatter.ofPattern(PATRON_FECHA));
+
         System.out.println("⏱️ Inicio de llenado: " + tiempoInicioLlenado);
 
         if (tiempoFinalLlenado != null) {
@@ -88,7 +93,10 @@ public class NivelServiceImpl implements INivelService {
     private void verificarFinDeLlenado() {
         // CASO 3: Se llena completamente
         if (porcentajeActual == 100 && llenadoEnCurso) {
-            tiempoFinalLlenado = LocalDateTime.now().format(DateTimeFormatter.ofPattern(PATRON_FECHA));
+            //tiempoFinalLlenado = LocalDateTime.now().format(DateTimeFormatter.ofPattern(PATRON_FECHA));
+            tiempoFinalLlenado = ZonedDateTime.now(ZoneId.of("America/Mexico_City"))
+             .format(DateTimeFormatter.ofPattern(PATRON_FECHA));
+
             llenadoEnCurso = false;
             System.out.println("✅ Fin de llenado al 100%: " + tiempoFinalLlenado);
         }

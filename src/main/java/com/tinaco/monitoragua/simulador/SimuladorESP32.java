@@ -9,7 +9,7 @@ public class SimuladorESP32 {
 
     public static void main(String[] args) throws Exception {
         Random random = new Random();
-        double altura = 0.0;
+        double altura = 5.0;
 
         while (true) {
             
