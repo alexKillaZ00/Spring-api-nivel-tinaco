@@ -1,1 +1,8 @@
+com\tinaco\monitoragua\controller\NivelController.class
 com\tinaco\monitoragua\MonitoraguaApplication.class
+com\tinaco\monitoragua\service\INivelService.class
+com\tinaco\monitoragua\service\NivelServiceImpl.class
+com\tinaco\monitoragua\dto\NivelDTO.class
+com\tinaco\monitoragua\config\CorsConfig$1.class
+com\tinaco\monitoragua\simulador\SimuladorESP32.class
+com\tinaco\monitoragua\config\CorsConfig.class
